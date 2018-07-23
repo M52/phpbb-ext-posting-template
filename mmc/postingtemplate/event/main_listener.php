@@ -44,6 +44,6 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function load_posting_templates($event)
 	{
-		$template->assign_var()
+		$template->assign_var('S_OPTION', 'WORST');
 	}
 }
