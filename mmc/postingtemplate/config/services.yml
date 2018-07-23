@@ -1,0 +1,5 @@
+services:
+    mmc.postingtemplate.listener:
+        class: mmc\postingtemplate\event\main_listener
+        tags:
+            - { name: event.listener }
