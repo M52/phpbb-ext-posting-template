@@ -31,20 +31,23 @@ class main_listener implements EventSubscriberInterface
 
 	static public function getSubscribedEvents()
 	{
+		// TODO: attach to a different hook. This one runs on every page load. Find one that runs on Posting.php
 		return array(
-			'core.display_forums_modify_template_vars'	=> 'load_posting_templates',
+			'core.user_setup'	=> 'load_posting_templates',
 		);
 	}
 
 	/**
 	 * A sample PHP event
-	 * Modifies the names of the forums on index
-	 *
 	 * @param \phpbb\event\data	$event	Event object
 	 */
 	public function load_posting_templates($event)
 	{
-		$some_var = 'wrost';
-		$template->assign_var('S_OPTION', $some_var);
+		for ($i = 0; $i < 2; $i++) {
+	 		$this->template->assign_block_vars('posting_template_options', array(
+				'OPTION_NAME' => 'Worst',
+				'OPTION_ID' => $i
+			));
+		}
 	}
 }
