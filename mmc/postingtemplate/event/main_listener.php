@@ -23,7 +23,7 @@ class main_listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.display_forums_modify_template_vars'	=> 'display_forums_modify_template_vars',
+			'core.display_forums_modify_template_vars'	=> 'load_posting_templates',
 		);
 	}
 
@@ -33,10 +33,16 @@ class main_listener implements EventSubscriberInterface
 	 *
 	 * @param \phpbb\event\data	$event	Event object
 	 */
-	public function display_forums_modify_template_vars($event)
+	public function load_posting_templates($event)
 	{
-		$forum_row = $event['forum_row'];
-		$forum_row['FORUM_NAME'] .= ' :: Acme Event ::';
-		$event['forum_row'] = $forum_row;
+		for ($i = 0; $i < 2; $i++)
+		{
+		   $template->assign_block_vars('somerow', array(
+		      'VAR1' => "Option \$i: $i",
+		   ));
+		}
+		// $forum_row = $event['forum_row'];
+		// $forum_row['FORUM_NAME'] .= ' :: Acme Event ::';
+		// $event['forum_row'] = $forum_row;
 	}
 }
