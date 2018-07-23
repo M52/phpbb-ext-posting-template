@@ -1,5 +1,8 @@
 services:
     mmc.postingtemplate.listener:
         class: mmc\postingtemplate\event\main_listener
+        arguments:
+             - '@template'
+             - '@user'
         tags:
             - { name: event.listener }

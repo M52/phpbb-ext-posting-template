@@ -20,6 +20,15 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class main_listener implements EventSubscriberInterface
 {
+	protected $template;
+	protected $user;
+
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
+	{
+		$this->template = $template;
+		$this->user = $user;
+	}
+
 	static public function getSubscribedEvents()
 	{
 		return array(
@@ -33,16 +42,8 @@ class main_listener implements EventSubscriberInterface
 	 *
 	 * @param \phpbb\event\data	$event	Event object
 	 */
-	public function load_posting_templates($event, \phpbb\template\template $template)
+	public function load_posting_templates($event)
 	{
-		for ($i = 0; $i < 2; $i++)
-		{
-		   $template->assign_block_vars('somerow', array(
-		      'VAR1' => "Option \$i: $i",
-		   ));
-		}
-		// $forum_row = $event['forum_row'];
-		// $forum_row['FORUM_NAME'] .= ' :: Acme Event ::';
-		// $event['forum_row'] = $forum_row;
+		$event push()
 	}
 }
