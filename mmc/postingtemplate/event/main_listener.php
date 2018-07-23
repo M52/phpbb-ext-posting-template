@@ -33,7 +33,7 @@ class main_listener implements EventSubscriberInterface
 	 *
 	 * @param \phpbb\event\data	$event	Event object
 	 */
-	public function load_posting_templates($event)
+	public function load_posting_templates($event, \phpbb\template\template $template)
 	{
 		for ($i = 0; $i < 2; $i++)
 		{
