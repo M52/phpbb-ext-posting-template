@@ -44,6 +44,6 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function load_posting_templates($event)
 	{
-		$event push()
+		$template->assign_var()
 	}
 }
