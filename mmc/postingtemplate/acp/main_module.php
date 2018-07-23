@@ -12,7 +12,10 @@ class main_module {
         global $language, $template, $request, $config;
 
         $this->tpl_name = 'acp_posting_template';
-        $this->page_title = $language->lang('ACP_POSTING_TEMPLATE_TITLE');
+        $this->page_title = 'ACP - Posting Template';
+
+        // TODO: use language independent. See line below this one.
+        // $this->page_title = $language->lang('ACP_POSTING_TEMPLATE_TITLE');
 
         // add_form_key('acme_demo_settings');
         //
