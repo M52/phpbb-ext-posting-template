@@ -1,5 +1,20 @@
 <!-- INCLUDE overall_header.html -->
 <h1>{L_SETTINGS}</h1>
-<p>HIIIIIIIIIIIIIII</p>
+<form id='acp_posting_template' method='post' action='{U_ACTION}'>
+    <fieldset>
+        <dl>
+            <dt><label for='mmc_posting_template_board'>{L_MMC_POSTING_TEMPLATE_BOARD_SELECT}</label></dt>
+            <dd>
+                <select name='mmc_posting_template_board'>
+                    <option value="1">Option one</option>
+                    <option value="2">Option two</option>
+                </select>
+            </dd>
+        </dl>
+        <p class='submit-buttons'>
+            <input class='button1' type='submit' name='submit' value='{L_SUBMIT}' />
+        </p>
+        {S_FORM_TOKEN}
+    </fieldset>
+</form>
 <!-- INCLUDE overall_footer.html -->
-?
