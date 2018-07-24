@@ -30,11 +30,11 @@ class install_acp_module extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
-				'Posting Template'
+				'POSTING_TEMPLATE'
 			)),
 			array('module.add', array(
 				'acp',
-				'Posting Template',
+				'POSTING_TEMPLATE',
 				array(
 					'module_basename'	=> '\mmc\postingtemplate\acp\main_module',
 					'modes'				=> array('settings'),
