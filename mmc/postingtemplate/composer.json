@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "An extension that allows users to copyover a template/boilerplate post from a specialized posting template/boilerplate forum.",
     "homepage": "",
-    "version": "1.0.2-RC",
+    "version": "1.0.3-RC",
     "time": "2018-07-23",
     "license": "GPL-2.0-only",
     "authors": [

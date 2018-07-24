@@ -1,8 +1,4 @@
-<script>
-function load_posting_template(selectedOption) {
-    $('#message').val($('#'+selectedOption.value).text());
-}
-</script>
+<!-- INCLUDEJS posting_editor_subject_append.js -->
 <select id='posting-template-select' onchange='load_posting_template(this)'>
     <option value='#'>No template selected</option>
     <!-- BEGIN posting_template_options -->
