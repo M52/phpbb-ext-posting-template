@@ -6,14 +6,15 @@
             <dt><label for='mmc_posting_template_board'>{L_MMC_POSTING_TEMPLATE_BOARD_SELECT}</label></dt>
             <dd>
                 <select name='mmc_posting_template_board'>
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
+                    <!-- BEGIN posting_template_forums -->
+                    <option value={posting_template_forums.ID}>{posting_template_forums.NAME}</option>
+                    <!-- END posting_template_forums -->
                 </select>
             </dd>
         </dl>
-        <p class='submit-buttons'>
+        <div class='submit-buttons'>
             <input class='button1' type='submit' name='submit' value='{L_SUBMIT}' />
-        </p>
+        </div>
         {S_FORM_TOKEN}
     </fieldset>
 </form>

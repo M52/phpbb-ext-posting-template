@@ -19,5 +19,5 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACP_POSTING_TEMPLATE_TITLE'			=> 'Posting template module',
+	'MMC_POSTING_TEMPLATE_TITLE'			=> 'Posting template module',
 ));

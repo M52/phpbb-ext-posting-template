@@ -1,5 +1,14 @@
-<select id='posting-template-select'>
+<script>
+function load_posting_template(selectedOption) {
+    $('#message').val($('#'+selectedOption.value).html());
+}
+</script>
+<select id='posting-template-select' onchange='load_posting_template(this)'>
     <!-- BEGIN posting_template_options -->
-    <option id={posting_template_options.OPTION_ID}>{posting_template_options.OPTION_NAME}</option>
+    <option value=posting_template_{posting_template_options.ID}>{posting_template_options.NAME}</option>
     <!-- END posting_template_options -->
 </select>
+
+<!-- BEGIN posting_template_options -->
+<textarea id=posting_template_{posting_template_options.ID} style='display:none;'>{posting_template_options.TEXT}</textarea>
+<!-- END posting_template_options -->

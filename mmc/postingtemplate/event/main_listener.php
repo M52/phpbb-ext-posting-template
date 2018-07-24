@@ -22,11 +22,15 @@ class main_listener implements EventSubscriberInterface
 {
 	protected $template;
 	protected $user;
+	protected $db;
+	protected $config;
 
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\db\driver\driver_interface $db, \phpbb\config\config $config)
 	{
 		$this->template = $template;
 		$this->user = $user;
+		$this->db = $db;
+		$this->config = $config;
 	}
 
 	static public function getSubscribedEvents()
@@ -43,11 +47,24 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function load_posting_templates($event)
 	{
-		for ($i = 0; $i < 2; $i++) {
-	 		$this->template->assign_block_vars('posting_template_options', array(
-				'OPTION_NAME' => 'Worst',
-				'OPTION_ID' => $i
+		$user_id = $this->user->data['user_id'];
+		$sql = 'SELECT * FROM '.POSTS_TABLE.' WHERE `forum_id` = '.$this->config['mmc_posting_template_board'].'  AND `poster_id` = '.$user_id;
+
+		$result = $this->db->sql_query($sql);
+
+		while($row = $this->db->sql_fetchrow($result)) {
+			$this->template->assign_block_vars('posting_template_options', array(
+				'NAME' => $row['post_subject'],
+				'TEXT' => strip_tags($row['post_text']),
+				'ID' => $row['post_id']
 			));
 		}
+
+		// for ($i = 0; $i < 2; $i++) {
+	 	// 	$this->template->assign_block_vars('posting_template_options', array(
+		// 		'OPTION_NAME' => 'Worst',
+		// 		'OPTION_ID' => $i
+		// 	));
+		// }
 	}
 }
