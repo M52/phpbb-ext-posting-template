@@ -1,6 +1,6 @@
 <script>
 function load_posting_template(selectedOption) {
-    $('#message').val($('#'+selectedOption.value).html());
+    $('#message').val($('#'+selectedOption.value).text());
 }
 </script>
 <select id='posting-template-select' onchange='load_posting_template(this)'>
