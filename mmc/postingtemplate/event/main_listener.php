@@ -59,12 +59,5 @@ class main_listener implements EventSubscriberInterface
 				'ID' => $row['post_id']
 			));
 		}
-
-		// for ($i = 0; $i < 2; $i++) {
-	 	// 	$this->template->assign_block_vars('posting_template_options', array(
-		// 		'OPTION_NAME' => 'Worst',
-		// 		'OPTION_ID' => $i
-		// 	));
-		// }
 	}
 }
