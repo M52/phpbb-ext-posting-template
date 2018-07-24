@@ -8,7 +8,9 @@
                 <select name='mmc_posting_template_board'>
                     <option value='-1'>No template board selected</option>
                     <!-- BEGIN posting_template_forums -->
-                    <option value={posting_template_forums.ID}>{posting_template_forums.NAME}</option>
+                    <option value={posting_template_forums.ID}  <!-- IF MMC_POSTING_TEMPLATE_BOARD == posting_template_forums.ID --> selected='true' <!-- ENDIF -->>
+                        {posting_template_forums.NAME}
+                    </option>
                     <!-- END posting_template_forums -->
                 </select>
             </dd>
