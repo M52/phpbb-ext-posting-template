@@ -25,7 +25,7 @@ class install_acp_module extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('mmc_posting_template_board', 0)),
+			array('config.add', array('mmc_posting_template_board', -1)),
 
 			array('module.add', array(
 				'acp',
