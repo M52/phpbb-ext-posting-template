@@ -1,4 +1,6 @@
 <?php
+namespace mmc\postingtemplate\acp;
+
 class main_info
 {
     public function module()
