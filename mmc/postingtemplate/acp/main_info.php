@@ -11,7 +11,7 @@ class main_info
             'modes'    => array(
                 'settings'  => array(
                     'title' => 'Posting Template',
-                    'auth'  => 'ext_acme/demo && acl_a_board',
+                    'auth'  => 'ext_mmc/postingtemplate && acl_a_board',
                     'cat'   => array('MMC_POSTING_TEMPLATE_TITLE'),
                 ),
             ),
