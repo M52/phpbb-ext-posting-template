@@ -6,7 +6,7 @@
             <dt><label for='mmc_posting_template_board'>Please select the forum or category where the users should post there template/boilerplate posts and hit submit. NOTE: Users can only access posts THEY have made in the selected forum/category.</label></dt>
             <dd>
                 <select name='mmc_posting_template_board'>
-                    <option value='#'>No template selected</option>
+                    <option value='-1'>No template board selected</option>
                     <!-- BEGIN posting_template_forums -->
                     <option value={posting_template_forums.ID}>{posting_template_forums.NAME}</option>
                     <!-- END posting_template_forums -->

@@ -4,6 +4,7 @@ function load_posting_template(selectedOption) {
 }
 </script>
 <select id='posting-template-select' onchange='load_posting_template(this)'>
+    <option value='#'>No template selected</option>
     <!-- BEGIN posting_template_options -->
     <option value=posting_template_{posting_template_options.ID}>{posting_template_options.NAME}</option>
     <!-- END posting_template_options -->

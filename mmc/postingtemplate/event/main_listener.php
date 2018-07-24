@@ -47,17 +47,21 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function load_posting_templates($event)
 	{
-		$user_id = $this->user->data['user_id'];
-		$sql = 'SELECT * FROM '.POSTS_TABLE.' WHERE `forum_id` = '.$this->config['mmc_posting_template_board'].'  AND `poster_id` = '.$user_id;
+		if (isset($this->config['mmc_posting_template_board'])) {
+			if ($this->config['mmc_posting_template_board'] != -1) {
+				$user_id = $this->user->data['user_id'];
+				$sql = 'SELECT * FROM '.POSTS_TABLE.' WHERE `forum_id` = '.$this->config['mmc_posting_template_board'].'  AND `poster_id` = '.$user_id;
 
-		$result = $this->db->sql_query($sql);
+				$result = $this->db->sql_query($sql);
 
-		while($row = $this->db->sql_fetchrow($result)) {
-			$this->template->assign_block_vars('posting_template_options', array(
-				'NAME' => $row['post_subject'],
-				'TEXT' => strip_tags($row['post_text']),
-				'ID' => $row['post_id']
-			));
+				while($row = $this->db->sql_fetchrow($result)) {
+					$this->template->assign_block_vars('posting_template_options', array(
+						'NAME' => $row['post_subject'],
+						'TEXT' => strip_tags($row['post_text']),
+						'ID' => $row['post_id']
+					));
+				}
+			}
 		}
 	}
 }
