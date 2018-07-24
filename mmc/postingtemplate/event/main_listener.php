@@ -57,7 +57,7 @@ class main_listener implements EventSubscriberInterface
 				while($row = $this->db->sql_fetchrow($result)) {
 					$this->template->assign_block_vars('posting_template_options', array(
 						'NAME' => $row['post_subject'],
-						'TEXT' => strip_tags($row['post_text']),
+						'TEXT' => htmlspecialchars_decode(strip_tags($row['post_text'])),
 						'ID' => $row['post_id']
 					));
 				}
